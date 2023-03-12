@@ -4,41 +4,47 @@ import java.util.concurrent.TimeUnit;
 public class MasterLock
 {
     public static void main(String[] args) throws InterruptedException {
-        master(); //runs the main branch for the program
-        //test(); //runs the testing for the program
+        //master(); //runs the main branch for the program
+        test(); //runs the testing for the program
     }
 
-    private static void master() throws InterruptedException {
+    private static void master() throws InterruptedException { //main initialization for the lock
         int num1,num2,num3;
         Scanner scan = new Scanner(System.in);
         do{
         System.out.println("Enter your first number for the combination 0-39");
         num1 = scan.nextInt();
         }
-        while (!(num1 >= 0 && num1<40));
+        while (!(num1 >= 0 && num1<40)); //while the number is not between 0 and 39 repeat
         do{
         System.out.println("Enter your second number for the combination 0-39");
         num2 = scan.nextInt();
         }
-        while (!(num2 >= 0 && num2<40));
+        while (!(num2 >= 0 && num2<40)); //while the number is not between 0 and 39 repeat
         do{
         System.out.println("Enter your third number for the combination 0-39");
         num3 = scan.nextInt();
         }
-        while (!(num3 >= 0 && num3<40));
+        while (!(num3 >= 0 && num3<40)); //while the number is not between 0 and 39 repeat
         LockClass l = new LockClass(num1,num2,num3);
-        funct(l);
+        funct(l); //goes to main function to run lock program
     }
 
-    private static void test() throws InterruptedException {
+    private static void test() throws InterruptedException { //testing class
         LockClass l = new LockClass();
         Test test = new Test(l);
-        test.mainTesting();
+        test.mainTesting(); //runs the testing method
     }
+
+    /**
+     * main function for the lock
+     * @param l the class the lock is running under
+     * @throws InterruptedException used for the sleep counter should never error
+     */
     private static void funct(LockClass l) throws InterruptedException {
-        boolean exit = false;
+        boolean exit = false; //repeater variable
         Scanner scan = new Scanner(System.in);
-        while (!exit)
+        while (!exit) //repeats forever
         {
             System.out.println("Enter the option number of your choice");
             System.out.println("1. Alter lock's combination");
@@ -49,6 +55,7 @@ public class MasterLock
             System.out.println("6. Reset (This turns the lock an entire revolution clockwise resetting the entering sequence to allow you to start " +
                     "entering the combination from the beginning)");
             System.out.println("7. Close Lock");
+            System.out.println("8. Exit program");
             int answer = scan.nextInt();
             switch (answer)
             {
@@ -85,6 +92,16 @@ public class MasterLock
                 case 7:
                     l.closeLock();
                     TimeUnit.SECONDS.sleep(1);
+                    break;
+                case 8:
+                    int n;
+                    do {
+                        System.out.println("Are you sure you want to exit the program yes=1 or no=2");
+                        n = scan.nextInt();
+                    }while(!(n==1 || n==2)); //while n != 1 or 2 repeat
+                    if (n==1) {
+                        System.exit(0);
+                    }
                     break;
                 default:
                     System.out.println("Please enter one of the given option's numbers 1-6");

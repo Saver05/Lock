@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="597db58d-3137-4778-9db1-0b691c992d1c" name="Changes" comment="lock class constructor">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="597db58d-3137-4778-9db1-0b691c992d1c" name="Changes" comment="Done just need to add comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LockClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LockClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MasterLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MasterLock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +73,7 @@
       <workItem from="1677104906158" duration="327000" />
       <workItem from="1677370685302" duration="598000" />
       <workItem from="1677602241998" duration="41000" />
-      <workItem from="1678652290847" duration="5065000" />
+      <workItem from="1678652290847" duration="6737000" />
     </task>
     <task id="LOCAL-00001" summary="lock class constructor">
       <created>1677105115865</created>
@@ -84,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677105115865</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Done just need to add comments">
+      <created>1678657493038</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678657493038</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,18 +125,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lock class constructor" />
-    <option name="LAST_COMMIT_MESSAGE" value="lock class constructor" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/LockClass.java</url>
-          <line>7</line>
-          <properties field="combinationCounter" class="LockClass" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Done just need to add comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done just need to add comments" />
   </component>
 </project>

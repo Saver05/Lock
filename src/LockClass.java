@@ -8,6 +8,13 @@ import java.util.Scanner;
     int combinationCounter = 3; // when it = 0 lock can be opened
     String direction = "clockwise"; //defines the direction of the turn
      // will either be clockwise or counterclockwise
+
+     /**
+      * Main constructor
+      * @param num1 the first input for the lock
+      * @param num2 the second input for the lock
+      * @param num3 the third input for the lock
+      */
     public LockClass(int num1, int num2, int num3)
     {
         x = num1;
@@ -16,12 +23,18 @@ import java.util.Scanner;
         lockStatus = true;
     }
 
+     /**
+      * Constructor for testing class
+      */
     public LockClass()
     {
         x=y=z=0;
         lockStatus = true;
     }
 
+     /**
+      * Checks for the lock being open before beginning lock combination changing
+      */
     public void alterCombination()
     {
         if (!lockStatus)
@@ -34,6 +47,12 @@ import java.util.Scanner;
         System.out.println("Combination change successfully");
     }
 
+     /**
+      * Testing class for alterCombination
+      * @param in1 first input for lock
+      * @param in2 second input for lock
+      * @param in3 third input for lock
+      */
      public void alterCombination(int in1,int in2,int in3) //testing class same as above just doesn't take user input
      {
          if (!lockStatus)
@@ -45,6 +64,10 @@ import java.util.Scanner;
          changeCombination(in1,in2,in3);
          System.out.println("Combination change successfully");
      }
+
+     /**
+      * Main way to get inputs for changing the combination on the lock
+      */
     private void changeCombination()
     {
         Scanner scan = new Scanner(System.in);
@@ -55,6 +78,13 @@ import java.util.Scanner;
         System.out.println("Enter your third number for the combination");
         z = scan.nextInt();
     }
+
+     /**
+      * testing method for changeCombination
+      * @param in1 first input for lock
+      * @param in2 second input for lock
+      * @param in3 third input for lock
+      */
      private void changeCombination(int in1,int in2,int in3) //testing class same as above just doesn't take user input
      {
          System.out.println("Enter your first number for the combination");
@@ -65,11 +95,18 @@ import java.util.Scanner;
          z = in3;
      }
 
+     /**
+      * resets the lock by turning it one full revolution clockwise
+      */
      public void resetEnter()
      {
          combinationCounter=3;
          System.out.println("You have turned the lock one full revolution clockwise");
      }
+
+     /**
+      * allows you to turn the knob to a certain number and in a direction
+      */
     public void turnKnob() {
         Scanner scan = new Scanner(System.in);
         int n;
@@ -96,6 +133,12 @@ import java.util.Scanner;
         currentTop = n;
         checkOpening(prev);
     }
+
+     /**
+      * testing class for turnKnob
+      * @param number number we are turning the knob to
+      * @param d direction the knob should turn in int form
+      */
      public void turnKnob(int number,int d) { //testing class just doesn't take user input otherwise same
          int n;
          do {
@@ -105,7 +148,8 @@ import java.util.Scanner;
          while (!(n >= 0 && n<40));
          int dir = 0;
          do{
-             System.out.println("Enter what direction you would like the knob to be turned\n" + "1 for Clockwise or 2 for Counter Clockwise");
+             System.out.println("Enter what direction you would like the knob to be turned"
+                     + "1 for Clockwise or 2 for Counter Clockwise");
              dir = d;}
          while(!(dir==1 || dir == 2));
          if (dir==1)
@@ -121,12 +165,21 @@ import java.util.Scanner;
          currentTop = n;
          checkOpening(prev);
      }
+
+     /**
+      * checks to see if the lock can be opened using the combinationCounter int
+      * runs every time the lock is turned checking to see if it is turned to the correct number
+      * and in the correct direction
+      * @param prev the previous top used for checking if the knob was turned clockwise an entire revolution
+      *             on the first turn
+      */
     private void checkOpening(int prev)
     {
         switch(combinationCounter)
         {
             case 3:
-                if (currentTop == x && direction == "clockwise" && currentTop>=prev) //checks if first code is entered correctly
+                if (currentTop == x && direction == "clockwise" && currentTop>=prev)
+                    //checks if first code is entered correctly and if lock made a full rotation
                 {
                     combinationCounter--;
                     return;
@@ -153,12 +206,28 @@ import java.util.Scanner;
                 combinationCounter=3;
         }
     }
+
+     /**
+      * Closes the lock unless it is already closed then tells you it is already closed
+      */
     public void closeLock()
     {
+        if (!inquireStatus())
+        {
+            System.out.println("The lock is already closed");
+            return;
+        }
         System.out.println("Lock is now closed");
         lockStatus = false;
     }
 
+     /**
+      * This attempts to open the lock
+      * if the lock is already open tells you the lock is already open
+      * if the combinationCounter is not 0 as would be the case if you entered the correct sequence tells you,
+      * you failed to open the lock
+      * otherwise the lock opens
+      */
     public void tryOpenLock()
     {
         if (lockStatus)
@@ -176,11 +245,19 @@ import java.util.Scanner;
         lockStatus = true;
     }
 
+     /**
+      * gives whether the lock is open or closed
+      * @return bool true for open false for closed
+      */
     public boolean inquireStatus()
     {
         return lockStatus;
     }
 
+     /**
+      * gives the number currently on top
+      * @return int of the number on top
+      */
     public int numberOnTop()
     {
         return currentTop;

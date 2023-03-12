@@ -71,6 +71,7 @@ public class Test
         lock.tryOpenLock();
         TimeUnit.SECONDS.sleep(5);
         System.out.println("Testing lock status should report open");
+        TimeUnit.SECONDS.sleep(2);
         if (lock.inquireStatus())
         {
             System.out.println("Lock is open");
@@ -80,5 +81,6 @@ public class Test
             System.out.println("Lock is closed");
         }
         TimeUnit.SECONDS.sleep(5);
+
     }
 }
