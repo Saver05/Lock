@@ -4,8 +4,8 @@ import java.util.concurrent.TimeUnit;
 public class MasterLock
 {
     public static void main(String[] args) throws InterruptedException {
-        //master(); //runs the main branch for the program
-        test(); //runs the testing for the program
+        master(); //runs the main branch for the program
+        //test(); //runs the testing for the program
     }
 
     private static void master() throws InterruptedException { //main initialization for the lock
